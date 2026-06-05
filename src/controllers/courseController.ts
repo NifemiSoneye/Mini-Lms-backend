@@ -136,7 +136,7 @@ const deleteCourse = asyncHandler(async (req: Request, res: Response) => {
 
   const result = await course.deleteOne();
 
-  res.json(`Board "${course.title}" deleted`);
+  res.json(`Course "${course.title}" deleted`);
 });
 
 export {
