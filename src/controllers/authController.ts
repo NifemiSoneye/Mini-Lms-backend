@@ -7,14 +7,14 @@ import asyncHandler from "express-async-handler";
 const handleRegister = asyncHandler(
   async (req: Request, res: Response): Promise<void> => {
     const {
-      username,
+      name,
       password,
       email,
-    }: { username: string; password: string; email: string } = req.body;
-    if (!username || !password || !email) {
+    }: { name: string; password: string; email: string } = req.body;
+    if (!name || !password || !email) {
       res
         .status(400)
-        .json({ message: "Username ,password and email are required." });
+        .json({ message: "Name ,password and email are required." });
       return;
     }
     const duplicate = await User.findOne({ email: email }).exec();
@@ -24,11 +24,11 @@ const handleRegister = asyncHandler(
     }
     const hashedPwd: string = await bcrypt.hash(password, 10);
 
-    const userObject = { username, password: hashedPwd, email };
+    const userObject = { name, password: hashedPwd, email };
     const user = await User.create(userObject);
 
     if (user) {
-      res.status(201).json({ message: `New user ${username} created` });
+      res.status(201).json({ message: `New user ${name} created` });
     } else {
       res.status(400).json({ message: "Invalid user data recieved" });
     }
@@ -40,7 +40,7 @@ const handleLogin = asyncHandler(
     const cookies = req.cookies;
     const { email, password }: { email: string; password: string } = req.body;
     if (!email || !password) {
-      res.status(400).json({ message: "Username and password are required." });
+      res.status(400).json({ message: "Name and password are required." });
       return;
     }
     const foundUser = await User.findOne({ email: email }).exec();

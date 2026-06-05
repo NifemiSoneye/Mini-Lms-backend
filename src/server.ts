@@ -11,6 +11,7 @@ import authRoutes from "./routes/authRoutes";
 import corsOptions from "./config/corsOptions";
 import courseRoutes from "./routes/courseRoutes";
 import lessonRoutes from "./routes/lessonRoutes";
+import progressRoutes from "./routes/progressRoutes";
 const app = express();
 const PORT = process.env.PORT || 3500;
 connectDB();
@@ -21,8 +22,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/", express.static(path.join(__dirname, "public")));
 app.use("/auth", authRoutes);
-app.use("/", authRoutes);
-app.use("/", authRoutes);
+app.use("/", courseRoutes);
+app.use("/", lessonRoutes);
+app.use("/", progressRoutes);
 
 app.all(/.*/, (req, res) => {
   res.status(404);
