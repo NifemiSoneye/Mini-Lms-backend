@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import connectDB from "./config/dbConn";
 import errorHandler from "./middleware/errorHandler";
 import { logEvents, logger } from "./middleware/logger";
+import authRoutes from "./routes/authRoutes";
 const app = express();
 const PORT = process.env.PORT || 3500;
 connectDB();
@@ -16,6 +17,7 @@ app.use(logger);
 app.use(express.json());
 app.use(cookieParser());
 app.use("/", express.static(path.join(__dirname, "public")));
+app.use("/auth", authRoutes);
 
 app.all(/.*/, (req, res) => {
   res.status(404);
