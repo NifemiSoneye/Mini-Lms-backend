@@ -17,3 +17,16 @@
 20260605	09:25:29	2d0c6e47-057c-4396-9e37-cc4a4f57e7cf	 PATCH	undefined	/courses/6a22f81427140bbe59eb9b9c/publish
 20260605	09:25:35	b2e2a10a-e48d-4476-ba04-437f3d26e948	 PATCH	undefined	/courses
 20260605	09:25:39	03a0b935-ad69-40bb-835c-a260f35f0757	 GET	undefined	/courses
+20260607	10:13:27	cb88b37a-96f2-4be9-aaa5-20324bba4b51	 OPTIONS	http://localhost:5173	/auth/login
+20260607	10:13:27	1768ee7a-3807-44c3-b9c3-e05c305e621d	 POST	http://localhost:5173	/auth/login
+20260607	10:32:27	082fe561-528e-42f7-b614-f6d65a651e5d	 OPTIONS	http://localhost:5173	/auth/login
+20260607	10:32:27	7735d893-e59a-4d2e-b89c-299f26c921f2	 POST	http://localhost:5173	/auth/login
+20260607	10:32:53	5c082644-65c7-4215-a251-6f288023cbb9	 OPTIONS	http://localhost:5173	/auth/login
+20260607	10:32:53	fd23ae53-85ff-4081-bbdb-03bd4346499d	 POST	http://localhost:5173	/auth/login
+20260607	10:32:54	df7f2f63-6663-4b6d-9a5a-c1bd80f02fcf	 POST	http://localhost:5173	/auth/login
+20260607	11:36:01	b85432f6-3f45-4c83-a77a-82d2c9a70d5c	 OPTIONS	http://localhost:5173	/auth/register
+20260607	11:36:01	bf1ba739-8c08-434a-ae57-54a7698c5871	 POST	http://localhost:5173	/auth/register
+20260607	11:36:22	86d4e4f9-4346-4a48-a952-5a5000e1fcbf	 OPTIONS	http://localhost:5173	/auth/login
+20260607	11:36:22	6f294994-7451-4dc0-9175-b30ccef0429a	 POST	http://localhost:5173	/auth/login
+20260607	11:36:30	3134e5fe-8d00-43b3-b7a3-0b3f19939d22	 OPTIONS	http://localhost:5173	/auth/login
+20260607	11:36:30	5049699e-4d17-4f05-829b-15ed84f35672	 POST	http://localhost:5173	/auth/login

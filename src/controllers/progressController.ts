@@ -19,6 +19,17 @@ const getProgress = asyncHandler(async (req: Request, res: Response) => {
   }
   res.json(progress);
 });
+
+const getMyCourses = asyncHandler(async (req: Request, res: Response) => {
+  const userId = req.user?.id;
+
+  const myProgress = await Progress.find({ user: userId }).exec();
+
+  const courseIds = myProgress.map((p) => p.course);
+
+  const courses = await Course.find({ _id: { $in: courseIds } }).lean();
+  res.json(courses);
+});
 const markLessonComplete = asyncHandler(async (req: Request, res: Response) => {
   const { courseId, lessonId } = req.params;
   const userId = req.user?.id;
@@ -49,4 +60,4 @@ const markLessonComplete = asyncHandler(async (req: Request, res: Response) => {
   res.json(updatedProgress);
 });
 
-export { getProgress, markLessonComplete };
+export { getProgress, markLessonComplete, getMyCourses };
