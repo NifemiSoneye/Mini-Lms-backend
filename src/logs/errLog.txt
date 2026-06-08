@@ -1,3 +1,10 @@
 20260605	09:22:07	f94bf186-82a5-49c7-bd0b-41eabe8c0a46	 TypeError : Cannot destructure property 'email' of 'req.body' as it is undefined.
 20260605	09:22:53	a9d39ccc-e2ea-4479-a000-d9c6b6369f0a	 TypeError : Cannot destructure property 'title' of 'req.body' as it is undefined.
 20260605	09:25:35	c9e00b80-47d4-4bce-9ac6-59280ea57e95	 Error : ENOENT: no such file or directory, stat 'C:\Users\DELL\lms-backend\src\views\404.html'
+20260608	05:52:25	df830332-d4e0-4265-beab-aa233ca814f0	 MongoServerSelectionError : getaddrinfo ENOTFOUND ac-dialft6-shard-00-00.hg8d3mo.mongodb.net
+20260608	05:52:49	690f8822-89dc-4584-af39-b07e673d9ae6	 MongoServerSelectionError : getaddrinfo ENOTFOUND ac-dialft6-shard-00-00.hg8d3mo.mongodb.net
+20260608	07:00:52	cc160ee5-2228-4523-ab7c-57f0369d3a43	 CastError : Cast to ObjectId failed for value "my-courses" (type string) at path "course" for model "Progress"
+20260608	07:06:16	d6bd1ee8-29bb-4137-9347-c2452864ca73	 CastError : Cast to ObjectId failed for value "my-courses" (type string) at path "course" for model "Progress"
+20260608	07:22:36	137fd99c-ed08-4dd7-a3b5-bdd44a851c7d	 CastError : Cast to ObjectId failed for value "my-courses" (type string) at path "course" for model "Progress"
+20260608	07:25:26	9cd8d599-6533-48f7-bf28-1100ea6dcc21	 CastError : Cast to ObjectId failed for value "my-courses" (type string) at path "course" for model "Progress"
+20260608	11:00:46	771f02fb-e4b6-4712-9bef-9c15667bc537	 MongoServerSelectionError : getaddrinfo ENOTFOUND ac-dialft6-shard-00-00.hg8d3mo.mongodb.net

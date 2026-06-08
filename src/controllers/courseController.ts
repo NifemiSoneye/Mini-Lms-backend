@@ -6,7 +6,14 @@ import Progress from "../models/Progress";
 
 const getAllCourses = asyncHandler(async (req: Request, res: Response) => {
   const courses = await Course.find({ isPublished: true }).lean();
-  res.json(courses);
+  const coursesWithCount = await Promise.all(
+    courses.map(async (course) => {
+      const lessonCount = await Lesson.countDocuments({ course: course._id });
+      return { ...course, lessonCount };
+    }),
+  );
+
+  res.json(coursesWithCount);
 });
 const getCourseById = asyncHandler(async (req: Request, res: Response) => {
   const { id } = req.params;

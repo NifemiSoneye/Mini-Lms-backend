@@ -23,12 +23,38 @@ const getProgress = asyncHandler(async (req: Request, res: Response) => {
 const getMyCourses = asyncHandler(async (req: Request, res: Response) => {
   const userId = req.user?.id;
 
-  const myProgress = await Progress.find({ user: userId }).exec();
+  const myProgress = await Progress.find({ user: userId })
+    .populate("course")
+    .lean();
 
-  const courseIds = myProgress.map((p) => p.course);
+  res.json(myProgress);
+});
 
-  const courses = await Course.find({ _id: { $in: courseIds } }).lean();
-  res.json(courses);
+const enrollInCourse = asyncHandler(async (req: Request, res: Response) => {
+  const userId = req.user?.id;
+  const { courseId } = req.body;
+
+  if (!courseId) {
+    res.status(400).json({ message: "Course ID required" });
+    return;
+  }
+
+  const alreadyEnrolled = await Progress.findOne({
+    user: userId,
+    course: courseId,
+  });
+  if (alreadyEnrolled) {
+    res.status(400).json({ message: "Already enrolled in this course" });
+    return;
+  }
+
+  const progress = await Progress.create({
+    user: userId,
+    course: courseId,
+    completedLessons: [],
+  });
+
+  res.status(201).json({ message: "Enrolled successfully", progress });
 });
 const markLessonComplete = asyncHandler(async (req: Request, res: Response) => {
   const { courseId, lessonId } = req.params;
@@ -60,4 +86,4 @@ const markLessonComplete = asyncHandler(async (req: Request, res: Response) => {
   res.json(updatedProgress);
 });
 
-export { getProgress, markLessonComplete, getMyCourses };
+export { getProgress, markLessonComplete, getMyCourses, enrollInCourse };
