@@ -27,12 +27,20 @@ const getMyCourses = asyncHandler(async (req: Request, res: Response) => {
     .populate("course")
     .lean();
 
-  res.json(myProgress);
+  const progressWithCount = await Promise.all(
+    myProgress.map(async (p) => {
+      const course = p.course as any;
+      const lessonCount = await Lesson.countDocuments({ course: course._id });
+      return { ...p, course: { ...course, lessonCount } };
+    }),
+  );
+
+  res.json(progressWithCount);
 });
 
 const enrollInCourse = asyncHandler(async (req: Request, res: Response) => {
   const userId = req.user?.id;
-  const { courseId } = req.body;
+  const { courseId } = req.params as { courseId: string };
 
   if (!courseId) {
     res.status(400).json({ message: "Course ID required" });

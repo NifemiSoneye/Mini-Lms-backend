@@ -136,3 +136,11 @@
 20260608	13:49:42	d6db592b-63ef-414d-9880-bb2214f17300	 OPTIONS	http://localhost:5173	/progress/my-courses
 20260608	13:49:42	df747415-7cff-41e2-b175-3125273e0314	 GET	http://localhost:5173	/courses
 20260608	13:49:42	9cc7e4d5-5d0f-471f-8eeb-088be28d8924	 GET	http://localhost:5173	/progress/my-courses
+20260608	14:00:39	06a2e28c-c9ee-41a7-a613-11cb6570b941	 POST	undefined	/progress/6a26aea34ca26b053527d760/enroll
+20260608	14:00:58	02549bc5-2c16-4bc0-8200-7e88c28cc9c8	 POST	undefined	/progress/6a26aea34ca26b053527d760/enroll
+20260608	14:01:12	2157d964-1ee8-439b-b63e-381f99b2ec95	 POST	undefined	/progress/6a26ae384ca26b053527d75d/enroll
+20260608	14:01:49	ded8ae0e-a259-40cb-a6cc-989a358bc939	 POST	undefined	/auth/login
+20260608	14:02:12	c44478eb-a06e-49ba-a26e-39fc264ea8e9	 POST	undefined	/progress/6a26ae384ca26b053527d75d/enroll
+20260608	14:02:47	21415b66-1277-4b44-89f5-ad47f7b55e0b	 POST	undefined	/progress/my-courses
+20260608	14:02:51	11a1eba3-5ea0-4f44-9351-3a107ed03b3b	 GET	undefined	/progress/my-courses
+20260608	14:04:16	169a7d2a-f6a9-429d-b1bf-8d4e25f86c75	 GET	undefined	/progress/my-courses

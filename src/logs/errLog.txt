@@ -8,3 +8,4 @@
 20260608	07:22:36	137fd99c-ed08-4dd7-a3b5-bdd44a851c7d	 CastError : Cast to ObjectId failed for value "my-courses" (type string) at path "course" for model "Progress"
 20260608	07:25:26	9cd8d599-6533-48f7-bf28-1100ea6dcc21	 CastError : Cast to ObjectId failed for value "my-courses" (type string) at path "course" for model "Progress"
 20260608	11:00:46	771f02fb-e4b6-4712-9bef-9c15667bc537	 MongoServerSelectionError : getaddrinfo ENOTFOUND ac-dialft6-shard-00-00.hg8d3mo.mongodb.net
+20260608	14:02:47	5e4b0f53-3dd8-4765-bc27-2166200b5cbb	 Error : ENOENT: no such file or directory, stat 'C:\Users\DELL\lms-backend\src\views\404.html'
