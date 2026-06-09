@@ -10,9 +10,10 @@ import verifyAdmin from "../middleware/verifyAdmin";
 const router = express.Router();
 
 router.use(verifyJWT);
-router.use(verifyAdmin);
-router.route("/courses/:courseId/lessons").post(addLesson);
-router.route("/courses/:courseId/lessons/:id").patch(updateLesson);
-router.route("/courses/:courseId/lessons/:id").delete(deleteLesson);
+router.route("/courses/:courseId/lessons").post(verifyAdmin, addLesson);
+router.route("/courses/:courseId/lessons/:id").patch(verifyAdmin, updateLesson);
+router
+  .route("/courses/:courseId/lessons/:id")
+  .delete(verifyAdmin, deleteLesson);
 
 export default router;

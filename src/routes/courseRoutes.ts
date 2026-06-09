@@ -15,10 +15,9 @@ const router = express.Router();
 router.route("/courses").get(getAllCourses);
 router.route("/courses/:id").get(getCourseById);
 router.use(verifyJWT);
-router.use(verifyAdmin);
-router.route("/courses").post(createCourse);
-router.route("/courses/:id").patch(updateCourse);
-router.route("/courses/:id/publish").patch(togglePublish);
-router.route("/courses/:id").delete(deleteCourse);
+router.route("/courses").post(verifyAdmin, createCourse);
+router.route("/courses/:id").patch(verifyAdmin, updateCourse);
+router.route("/courses/:id/publish").patch(verifyAdmin, togglePublish);
+router.route("/courses/:id").delete(verifyAdmin, deleteCourse);
 
 export default router;

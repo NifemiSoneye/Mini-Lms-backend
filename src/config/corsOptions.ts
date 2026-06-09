@@ -10,6 +10,8 @@ const corsOptions: CorsOptions = {
   },
   credentials: true,
   optionsSuccessStatus: 200,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 export default corsOptions;
