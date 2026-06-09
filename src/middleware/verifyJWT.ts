@@ -23,8 +23,6 @@ const verifyJWT = (req: Request, res: Response, next: NextFunction) => {
     token,
     process.env.ACCESS_TOKEN_SECRET as string,
     (err, decoded) => {
-      console.log("JWT Error:", err);
-      console.log("Decoded:", decoded);
       if (err) {
         return res.status(403).json({ message: "Forbidden" });
       }

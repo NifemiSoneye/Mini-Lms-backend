@@ -39,7 +39,6 @@ const getMyCourses = asyncHandler(async (req: Request, res: Response) => {
 });
 
 const enrollInCourse = asyncHandler(async (req: Request, res: Response) => {
-  console.log("Enroll hit", req.user, req.params);
   const userId = req.user?.id;
   const { courseId } = req.params as { courseId: string };
 
