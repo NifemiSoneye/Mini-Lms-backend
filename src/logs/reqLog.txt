@@ -1029,3 +1029,13 @@
 20260609	13:30:29	40df85cb-4293-4c05-aa4e-021142e6db73	 OPTIONS	http://localhost:5173	/progress/6a26aea34ca26b053527d760
 20260609	13:30:30	212a4ff4-eaf3-4282-84a0-cdafc62a0096	 GET	http://localhost:5173	/courses/6a26aea34ca26b053527d760
 20260609	13:30:30	22ec6f0a-7d22-4ccc-98ed-f8d3d8bbea75	 GET	http://localhost:5173	/progress/6a26aea34ca26b053527d760
+20260609	13:59:16	cb6cc640-a034-419d-aff5-49b425a63072	 GET	undefined	/auth/login
+20260609	13:59:21	a49f1705-4a53-4545-aa7e-73398b02b1d6	 POST	undefined	/auth/login
+20260609	13:59:52	f09dab40-b532-459f-8cab-ca207d5d0921	 POST	undefined	/admin/stats
+20260609	13:59:55	ac579d0f-0dc6-460b-a512-a4d8b8ce5e57	 GET	undefined	/admin/stats
+20260609	14:08:52	0b69f685-37a4-46ac-ac85-f78a90d7bff7	 GET	http://localhost:5173	/auth/refresh
+20260609	14:08:53	ddf6e3bd-362a-4421-960f-906ce81f69ae	 OPTIONS	http://localhost:5173	/admin/stats
+20260609	14:08:53	5e71d8a9-6f29-4612-8fe1-3cd3f8e6ddcd	 GET	http://localhost:5173	/admin/stats
+20260609	14:12:36	e6a40e69-8b35-46d8-ac29-837add15e436	 GET	http://localhost:5173	/auth/refresh
+20260609	14:12:36	780a9e37-8a9d-4e0a-afdf-ec37bc4b2b59	 OPTIONS	http://localhost:5173	/admin/stats
+20260609	14:12:36	80abfba1-bcab-4179-99db-13a5ff15e2d4	 GET	http://localhost:5173	/admin/stats

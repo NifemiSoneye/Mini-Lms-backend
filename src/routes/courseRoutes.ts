@@ -6,6 +6,8 @@ import {
   createCourse,
   updateCourse,
   deleteCourse,
+  getStats,
+  getAllCoursesAdmin,
 } from "../controllers/courseController";
 import verifyJWT from "../middleware/verifyJWT";
 import verifyAdmin from "../middleware/verifyAdmin";
@@ -19,5 +21,6 @@ router.route("/courses").post(verifyAdmin, createCourse);
 router.route("/courses/:id").patch(verifyAdmin, updateCourse);
 router.route("/courses/:id/publish").patch(verifyAdmin, togglePublish);
 router.route("/courses/:id").delete(verifyAdmin, deleteCourse);
-
+router.route("/admin/stats").get(verifyJWT, verifyAdmin, getStats);
+router.route("/admin/courses").get(verifyJWT, verifyAdmin, getAllCoursesAdmin);
 export default router;

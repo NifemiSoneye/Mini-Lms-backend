@@ -146,6 +146,29 @@ const deleteCourse = asyncHandler(async (req: Request, res: Response) => {
   res.json(`Course "${course.title}" deleted`);
 });
 
+const getStats = asyncHandler(async (req: Request, res: Response) => {
+  const [totalCourses, totalLessons, totalEnrollments] = await Promise.all([
+    Course.countDocuments(),
+    Lesson.countDocuments(),
+    Progress.countDocuments(),
+  ]);
+
+  res.json({ totalCourses, totalLessons, totalEnrollments });
+});
+
+const getAllCoursesAdmin = asyncHandler(async (req: Request, res: Response) => {
+  const courses = await Course.find().lean();
+
+  const coursesWithCount = await Promise.all(
+    courses.map(async (course) => {
+      const lessonCount = await Lesson.countDocuments({ course: course._id });
+      return { ...course, lessonCount };
+    }),
+  );
+
+  res.json(coursesWithCount);
+});
+
 export {
   getAllCourses,
   getCourseById,
@@ -153,4 +176,6 @@ export {
   updateCourse,
   deleteCourse,
   togglePublish,
+  getStats,
+  getAllCoursesAdmin,
 };
