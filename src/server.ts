@@ -13,6 +13,7 @@ import courseRoutes from "./routes/courseRoutes";
 import lessonRoutes from "./routes/lessonRoutes";
 import progressRoutes from "./routes/progressRoutes";
 const app = express();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 3500;
 connectDB();
 app.use(logger);
