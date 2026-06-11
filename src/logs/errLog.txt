@@ -11,3 +11,4 @@
 20260608	14:02:47	5e4b0f53-3dd8-4765-bc27-2166200b5cbb	 Error : ENOENT: no such file or directory, stat 'C:\Users\DELL\lms-backend\src\views\404.html'
 20260608	18:41:27	0b672aeb-df00-4274-a67f-678b83d786ce	 MongoServerSelectionError : getaddrinfo ENOTFOUND ac-dialft6-shard-00-00.hg8d3mo.mongodb.net
 20260609	13:59:52	08307ae0-8729-421b-b9b8-c8f774614263	 Error : ENOENT: no such file or directory, stat 'C:\Users\DELL\lms-backend\src\views\404.html'
+20260611	07:06:35	0afb794f-4888-40a8-942c-cc971f17af08	 MongoServerSelectionError : getaddrinfo ENOTFOUND ac-dialft6-shard-00-00.hg8d3mo.mongodb.net

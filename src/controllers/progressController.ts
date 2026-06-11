@@ -94,4 +94,27 @@ const markLessonComplete = asyncHandler(async (req: Request, res: Response) => {
   res.json(updatedProgress);
 });
 
-export { getProgress, markLessonComplete, getMyCourses, enrollInCourse };
+const unenrollFromCourse = asyncHandler(async (req: Request, res: Response) => {
+  const userId = req.user?.id;
+  const { courseId } = req.params;
+
+  const progress = await Progress.findOneAndDelete({
+    user: userId,
+    course: courseId,
+  });
+
+  if (!progress) {
+    res.status(404).json({ message: "Enrollment not found" });
+    return;
+  }
+
+  res.json({ message: "Successfully unenrolled from course" });
+});
+
+export {
+  getProgress,
+  markLessonComplete,
+  getMyCourses,
+  enrollInCourse,
+  unenrollFromCourse,
+};
