@@ -19,6 +19,9 @@ connectDB();
 app.use(logger);
 app.use(cors(corsOptions));
 
+app.get("/health", (req, res) => {
+  res.status(200).json({ message: "OK" });
+});
 app.use(express.json());
 app.use(cookieParser());
 app.use("/", express.static(path.join(__dirname, "public")));
