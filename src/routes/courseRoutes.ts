@@ -16,11 +16,12 @@ const router = express.Router();
 
 router.route("/courses").get(getAllCourses);
 router.route("/courses/:id").get(getCourseById);
-router.use(verifyJWT);
-router.route("/courses").post(verifyAdmin, createCourse);
-router.route("/courses/:id").patch(verifyAdmin, updateCourse);
-router.route("/courses/:id/publish").patch(verifyAdmin, togglePublish);
-router.route("/courses/:id").delete(verifyAdmin, deleteCourse);
+router.route("/courses").post(verifyJWT, verifyAdmin, createCourse);
+router.route("/courses/:id").patch(verifyJWT, verifyAdmin, updateCourse);
+router
+  .route("/courses/:id/publish")
+  .patch(verifyJWT, verifyAdmin, togglePublish);
+router.route("/courses/:id").delete(verifyJWT, verifyAdmin, deleteCourse);
 router.route("/admin/stats").get(verifyJWT, verifyAdmin, getStats);
 router.route("/admin/courses").get(verifyJWT, verifyAdmin, getAllCoursesAdmin);
 export default router;
